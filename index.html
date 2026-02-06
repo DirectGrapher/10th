@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧸 Teddy Day - Shanu ❤️ Fidha</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+    overflow:hidden;
+    color:white;
+    position:relative;
+  }
+  .teddy{
+    position:absolute;
+    width:25px; height:25px;
+    background:#d2691e;
+    border-radius:50%;
+    animation:float 6s linear infinite;
+    opacity:0.8;
+  }
+  @keyframes float{
+    0%{transform:translateY(100vh) rotate(0deg);opacity:0.7;}
+    50%{opacity:1;}
+    100%{transform:translateY(-100vh) rotate(360deg);opacity:0;}
+  }
+  .card{
+    background: rgba(0,0,0,0.35);
+    padding:25px;
+    border-radius:20px;
+    width:90%;
+    max-width:360px;
+    text-align:center;
+    z-index:2;
+    position:relative;
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
+  }
+  h1{ font-size:24px; margin-bottom:10px; text-shadow:1px 1px 5px #d2691e;}
+  p{ font-size:17px; margin-bottom:15px;}
+  button{
+    padding:12px 18px;
+    border-radius:25px;
+    border:none;
+    font-size:16px;
+    margin:8px;
+    cursor:pointer;
+    background:#d2691e;
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+
+<script>
+for(let i=0;i<35;i++){
+  const t=document.createElement('div');
+  t.classList.add('teddy');
+  t.style.left=Math.random()*100+'vw';
+  t.style.animationDuration=(4+Math.random()*5)+'s';
+  t.style.width=t.style.height=(15+Math.random()*20)+'px';
+  document.body.appendChild(t);
+}
+</script>
+
+<div class="card">
+  <h1>🧸 Happy Teddy Day! 🧸</h1>
+  <p>Here's a virtual cuddle from your teddy bear! 🤗💖</p>
+  <button onclick="showGift()">Cuddle Me 😍</button>
+</div>
+
+<script>
+function showGift(){
+  document.querySelector('.card').innerHTML=`
+    <h1>💖 You are my Teddy 💖</h1>
+    <p>Hugging you tight in my heart! 🤗❤️</p>
+    <p>Love, <b>Shanu</b></p>
+  `;
+}
+</script>
+
+</body>
+</html>
